@@ -27,3 +27,5 @@
 *.exe
 *.out
 *.app
+/MotionProfiling.VC.VC.opendb
+/MotionProfiling.VC.db
