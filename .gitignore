@@ -29,3 +29,15 @@
 *.app
 /MotionProfiling.VC.VC.opendb
 /MotionProfiling.VC.db
+/MotionProfiling/Debug/vc140.pdb
+/MotionProfiling/Debug/vc140.idb
+/MotionProfiling/Debug/MotionProfiling.tlog/MotionProfiling.lastbuildstate
+/MotionProfiling/Debug/MotionProfiling.tlog/link.write.1.tlog
+/MotionProfiling/Debug/MotionProfiling.tlog/link.read.1.tlog
+/MotionProfiling/Debug/MotionProfiling.tlog/link.command.1.tlog
+/MotionProfiling/Debug/MotionProfiling.tlog/CL.write.1.tlog
+/MotionProfiling/Debug/MotionProfiling.tlog/CL.read.1.tlog
+/MotionProfiling/Debug/MotionProfiling.tlog/CL.command.1.tlog
+/MotionProfiling/Debug/MotionProfiling.log
+/Debug/MotionProfiling.pdb
+/Debug/MotionProfiling.ilk
