@@ -23,3 +23,10 @@ struct TrajectoryPoint
 	double Filter2;
 	double Velocity;
 };
+
+
+TrajectoryPoint GeneratePoint(int step);
+
+TrajectoryPoint* PopulateMotionProfile();
+
+TrajectoryPoint motionProfileTrajectoryPoints[TOTAL_POINTS];
