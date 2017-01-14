@@ -8,6 +8,7 @@ Trapezoidal Motion Profile Constants
 /*
 #define ITERATION_TIME 50 // MS between trajectory points
 #define FILTER_ACCELERATE_TIME 200 // MS
+
 #define FILTER_DECCELERATE_TIME 100 // MS
 #define FILTER_ACCELERATE 20
 #define FILTER_DECCELERATE 20
