@@ -4,8 +4,8 @@
 #define ITERATION_TIME 50 // MS between trajectory points
 #define FILTER_ACCELERATE_TIME 200 // MS
 #define FILTER_DECCELERATE_TIME 100 // MS
-#define FILTER_ACCELERATE (FILTER_ACCELERATE_TIME / ITERATION_TIME) // # of Trajectory Points
-#define FILTER_DECCELERATE (FILTER_DECCELERATE_TIME / ITERATION_TIME) // # of Trajectory Points
+#define FILTER_ACCELERATE 20
+#define FILTER_DECCELERATE 20
 
 #define MAXIMUM_SPEED 10 // Feet per second
 #define TRAVEL_DISTANCE 4 // Feet
