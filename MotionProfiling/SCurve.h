@@ -7,15 +7,15 @@ S-Curve Constants
 */
 
 // Time the S-Curve will happen
-#define TIME 5 // Seconds
+#define TIME 10.0 // Seconds
 
 // Current motion
-#define INITIAL_VELOCITY 0
-#define INITIAL_ACCELERATION 0
+// #define INITIAL_VELOCITY 0.0
+// #define INITIAL_ACCELERATION 0.0
 
 // Maximum motion
-#define MAXIMUM_VELOCITY 5 // Meters per Second
-#define MAXIMUM_ACCELERATION 1 // Meters per Second
+#define MAXIMUM_VELOCITY 15.0 // Meters per Second
+#define MAXIMUM_ACCELERATION 3.0 // Meters per Second
 
 // Jerk
 #define MAXIMUM_JERK (MAXIMUM_VELOCITY/TIME/TIME)
@@ -45,4 +45,6 @@ public:
 
 	// Populate motion profile
 	void PopulateProfile(int points);
+
+	std::vector<TrajectoryPoint> GetProfile() { return m_motionProfile; }
 };

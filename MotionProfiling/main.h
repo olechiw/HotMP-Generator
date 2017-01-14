@@ -1,5 +1,5 @@
 #pragma once
-
+#include "SCurve.h"
 
 /*
 Trapezoidal Motion Profile Constants

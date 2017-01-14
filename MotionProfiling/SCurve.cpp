@@ -1,6 +1,6 @@
 #pragma once
 #include "SCurve.h"
-
+#include <iostream>
 
 
 double SCurve::Position(double t)
@@ -26,7 +26,8 @@ void SCurve::PopulateProfile(int points)
 
 	for (int i = 0; i < points; ++i)
 	{
-		time += timeIncrement * i;
+		time += timeIncrement;
+
 		m_motionProfile.push_back({
 			Position(time),
 			Velocity(time),
