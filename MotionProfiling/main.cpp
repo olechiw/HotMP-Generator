@@ -6,7 +6,7 @@ int main()
 	SCurve* curve = new SCurve();
 	std::vector<TrajectoryPoint> points;
 
-	curve->PopulateProfile(50);
+	curve->PopulateProfile(120);
 
 	points = curve->GetProfile();
 

@@ -1,36 +1,40 @@
 #pragma once
 #include "SCurve.h"
 #include <iostream>
+#include <iterator>
 
-
-double SCurve::Position(double t)
+double SCurve::PositionConcave(double t)
 {
-	return JERK_ALLOWED * ((t*t*t) / 6);
+	return 0;
 }
 
-double SCurve::Velocity(double t)
+double SCurve::VelocityConcave(double t)
 {
-	return JERK_ALLOWED * ((t*t) / 2);
+	return 0;
 }
 
-double SCurve::Acceleration(double t)
+double SCurve::AccelerationConcave(double t)
 {
-	return JERK_ALLOWED * t;
+	return 0;
+}
+
+double SCurve::PositionConvex(double t)
+{
+	return 0;
+}
+
+double SCurve::VelocityConvex(double t)
+{
+	return 0;
+
+}
+
+double SCurve::AccelerationConvex(double t)
+{
+	return 0;
 }
 
 void SCurve::PopulateProfile(int points)
 {
-	double timeIncrement = TIME / points;
-
-	double time = 0;
-
-	for (int i = 0; i < points; ++i)
-	{
-		time += timeIncrement;
-
-		m_motionProfile.push_back({
-			Position(time),
-			Velocity(time),
-			Acceleration(time) });
-	}
+	
 }
