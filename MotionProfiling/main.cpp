@@ -9,8 +9,9 @@ int main()
 
 
 
-
+/*
 TrajectoryPoint GeneratePoint(int step)
 {
 	
 }
+*/

@@ -22,7 +22,7 @@ Trapezoidal Motion Profile Constants
 #define TOTAL_POINTS (TOTAL_TIME_OVERALL / ITERATION_TIME) // # of Trajectory Points
 */
 
-
+/*
 struct TrajectoryPoint
 {
 	double Step;
@@ -38,3 +38,4 @@ TrajectoryPoint GeneratePoint(int step);
 TrajectoryPoint* PopulateMotionProfile();
 
 TrajectoryPoint* motionProfileTrajectoryPoints; // Array
+*/
