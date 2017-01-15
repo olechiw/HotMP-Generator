@@ -37,14 +37,14 @@ double Trapezoid::Velocity(double t)
 	//	cout << 2 << endl;
 		//double maxTime = TIME_ACCELERATE;
 		//double condition = TIME_ACCELERATE + TIME_CONSTANT;
-		return (DISTANCE_CHANGING + (MAXIMUM_ACCELERATION * (t - TIME_CHANGING)));
+		return (VELOCITY_CHANGING + (MAXIMUM_ACCELERATION * (t - TIME_CHANGING)));
 	}
 	else
 	{
 	//	cout << 3 << endl;
 		double deccelTime = t - TIME_CHANGING - TIME_CONSTANT;
 		double trapezoid = (((Acceleration(t) + MAXIMUM_ACCELERATION) / 2) * deccelTime);
-		return (((Acceleration(t) + MAXIMUM_ACCELERATION) / 2) * deccelTime) + DISTANCE_CHANGING + DISTANCE_CONSTANT;
+		return (((Acceleration(t) + MAXIMUM_ACCELERATION) / 2) * deccelTime) + VELOCITY_CHANGING + VELOCITY_CONSTANT;
 	}
 	
 }
@@ -78,8 +78,19 @@ std::vector<TrajectoryPoint> Trapezoid::Populate(int points)
 	return profile;
 }
 
-Trapezoid::Trapezoid()
+Trapezoid::Trapezoid(double maxJerk, double maxAcceleration, double targetVelocity) :
+	MAXIMUM_JERK(maxJerk),
+	MAXIMUM_ACCELERATION(maxAcceleration),
+	TARGET_VELOCITY(targetVelocity)
 {
+	TIME_CHANGING = (MAXIMUM_ACCELERATION / MAXIMUM_JERK);
+
+	VELOCITY_CHANGING = (.5 * (MAXIMUM_ACCELERATION * TIME_CHANGING));
+
+	VELOCITY_CONSTANT = (TARGET_VELOCITY - (VELOCITY_CHANGING * 2));
+	TIME_CONSTANT = (VELOCITY_CONSTANT / MAXIMUM_ACCELERATION);
+
+	TOTAL_TIME = (TIME_CHANGING * 2 + TIME_CONSTANT);
 }
 
 

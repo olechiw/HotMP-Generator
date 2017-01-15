@@ -3,6 +3,10 @@
 
 using namespace std;
 
+const double MAXIMUM_JERK = 3;
+const double MAXIMUM_ACCELERATION = 10;
+const double TARGET_VELOCITY = 50;
+
 int main()
 {
 	SCurve* curve = new SCurve();
@@ -12,7 +16,7 @@ int main()
 
 	points = curve->GetProfile();
 
-	Trapezoid* trap = new Trapezoid();
+	Trapezoid* trap = new Trapezoid(MAXIMUM_JERK, MAXIMUM_ACCELERATION, TARGET_VELOCITY);
 
 	points = trap->Populate(120);
 
