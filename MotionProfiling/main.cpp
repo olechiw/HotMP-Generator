@@ -18,7 +18,7 @@ int main()
 
 	for (int i = 0; i < points.size(); ++i)
 	{
-		std::cout << points[i].Velocity << std::endl;
+		std::cout << points[i].Acceleration << std::endl;
 	}
 
 	system("pause");

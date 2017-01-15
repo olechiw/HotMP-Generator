@@ -4,47 +4,47 @@
 using namespace std;
 
 
-double Trapezoid::Velocity(double t)
+double Trapezoid::Acceleration(double t)
 {
-	if (t <= TIME_ACCELERATE)
+	if (t <= TIME_CHANGING)
 	{
-		return MAXIMUM_ACCELERATION * t;
+		return MAXIMUM_JERK * t;
 	}
 
-	else if (t < (TIME_ACCELERATE + TIME_CONSTANT))
+	else if (t < (TIME_CHANGING + TIME_CONSTANT))
 	{
-		return MAXIMUM_VELOCITY;
+		return MAXIMUM_ACCELERATION;
 	}
 	else
 	{
-		double velocityInitial = MAXIMUM_VELOCITY;
-		double time = t - (TIME_ACCELERATE + TIME_CONSTANT);
-		return velocityInitial - (time*MAXIMUM_ACCELERATION);
+		double velocityInitial = MAXIMUM_ACCELERATION;
+		double time = t - (TIME_CHANGING + TIME_CONSTANT);
+		return velocityInitial - (time*MAXIMUM_JERK);
 	}
 }
 
 
-double Trapezoid::Position(double t)
+double Trapezoid::Velocity(double t)
 {
 	//cout << endl << endl << endl << TIME_ACCELERATE << endl << endl << endl;
-	if (t <= TIME_ACCELERATE)
+	if (t <= TIME_CHANGING)
 	{
 	//	cout << 1 << endl;
-		return (Velocity(t) * t) / 2;
+		return (Acceleration(t) * t) / 2;
 	}
-	else if (t < TIME_ACCELERATE + TIME_CONSTANT)
+	else if (t < TIME_CHANGING + TIME_CONSTANT)
 	{
 	//	cout << 2 << endl;
 		//double maxTime = TIME_ACCELERATE;
 		//double condition = TIME_ACCELERATE + TIME_CONSTANT;
-		return (DISTANCE_ACCELERATE + (MAXIMUM_VELOCITY * (t - TIME_ACCELERATE)));
+		return (DISTANCE_CHANGING + (MAXIMUM_ACCELERATION * (t - TIME_CHANGING)));
 	}
 	else
 	{
 	//	cout << 3 << endl;
-		double deccelTime = t - TIME_ACCELERATE - TIME_CONSTANT;
-		double trapezoid = (((Velocity(t) + MAXIMUM_VELOCITY) / 2) * deccelTime);
-		return (((Velocity(t) + MAXIMUM_VELOCITY) / 2) * deccelTime) + DISTANCE_ACCELERATE + DISTANCE_CONSTANT;
+		double deccelTime = t - TIME_CHANGING - TIME_CONSTANT;
+		double trapezoid = (((Acceleration(t) + MAXIMUM_ACCELERATION) / 2) * deccelTime);
+		return (((Acceleration(t) + MAXIMUM_ACCELERATION) / 2) * deccelTime) + DISTANCE_CHANGING + DISTANCE_CONSTANT;
 	}
 	
 }
@@ -64,9 +64,9 @@ std::vector<TrajectoryPoint> Trapezoid::Populate(int points)
 	{
 		time += timeIncrement;
 
-		point.Velocity = Velocity(time);
+		point.Acceleration = Acceleration(time);
 
-		point.Position = Position(time);
+		point.Velocity = Velocity(time);
 
 		point.Time = time;
 
