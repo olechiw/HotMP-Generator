@@ -2,22 +2,7 @@
 
 #include <vector>
 
-/*
-S-Curve Constants
-*/
-
-
-
-
-
-
-struct TrajectoryPoint
-{
-	double Position; // 
-	double Velocity; // Meters per Second
-	double Acceleration;
-	double Time;
-};
+#include "TrajectoryPoint.h"
 
 class SCurve
 {

@@ -112,10 +112,13 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SCurve.cpp" />
+    <ClCompile Include="Trapezoid.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h" />
     <ClInclude Include="SCurve.h" />
+    <ClInclude Include="TrajectoryPoint.h" />
+    <ClInclude Include="Trapezoid.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
