@@ -1,7 +1,6 @@
 #pragma once
-#include "SCurve.h"
 #include "Trapezoid.h"
-
+#include "SCurvedMotionProfile.h"
 /*
 Trapezoidal Motion Profile Constants
 */

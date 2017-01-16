@@ -92,8 +92,3 @@ Trapezoid::Trapezoid(double maxJerk, double maxAcceleration, double targetVeloci
 
 	TOTAL_TIME = (TIME_CHANGING * 2 + TIME_CONSTANT);
 }
-
-
-Trapezoid::~Trapezoid()
-{
-}

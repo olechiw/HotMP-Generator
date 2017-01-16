@@ -3,26 +3,28 @@
 
 using namespace std;
 
-const double MAXIMUM_JERK = 3;
+const double MAXIMUM_JERK = 5;
 const double MAXIMUM_ACCELERATION = 10;
 const double TARGET_VELOCITY = 50;
 
 int main()
 {
-	SCurve* curve = new SCurve();
 	std::vector<TrajectoryPoint> points;
-
-	curve->PopulateProfile(120);
-
-	points = curve->GetProfile();
 
 	Trapezoid* trap = new Trapezoid(MAXIMUM_JERK, MAXIMUM_ACCELERATION, TARGET_VELOCITY);
 
 	points = trap->Populate(120);
 
+	
+
+	SCurvedMotionProfile profile = SCurvedMotionProfile(MAXIMUM_JERK, MAXIMUM_ACCELERATION, TARGET_VELOCITY, .2, 120);
+
+	points = profile.Populate();
+
+
 	for (int i = 0; i < points.size(); ++i)
 	{
-		std::cout << points[i].Acceleration << std::endl;
+		std::cout << points[i].Acceleration << "," << points[i].Velocity << endl;
 	}
 
 	system("pause");

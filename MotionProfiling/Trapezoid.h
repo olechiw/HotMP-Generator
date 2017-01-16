@@ -34,7 +34,6 @@ class Trapezoid
 	
 public:
 	Trapezoid(double maxJerk, double maxAcceleration, double targetVelocity);
-	~Trapezoid();
 	double Acceleration(double t);
 	double Velocity(double t);
 	std::vector<TrajectoryPoint> Populate(int points);
