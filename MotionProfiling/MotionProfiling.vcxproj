@@ -113,14 +113,12 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SCurvedMotionProfile.cpp" />
     <ClCompile Include="Trapezoid.cpp" />
-    <ClCompile Include="TrapezoidVelocity.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h" />
     <ClInclude Include="SCurvedMotionProfile.h" />
     <ClInclude Include="TrajectoryPoint.h" />
     <ClInclude Include="Trapezoid.h" />
-    <ClInclude Include="TrapezoidVelocity.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
