@@ -3,9 +3,9 @@
 
 using namespace std;
 
-#define _USE_DEBUG_VARIABLES_ true
+//#define _USE_DEBUG_VARIABLES_ true
 
-#define _USE_DEBUG_OUTPUT_ true
+//#define _USE_DEBUG_OUTPUT_ true
 
 
 // Different types of motors, for generating acceleration profiles
@@ -23,8 +23,8 @@ using namespace std;
 const double MAXIMUM_JERK = 500;
 const double MAXIMUM_ACCELERATION = 1000;
 const double TARGET_VELOCITY = 15000;
-const double TARGET_DISTANCE = 100;
-const double PRECISION = 128;
+const double TARGET_DISTANCE = 300000;
+const double PRECISION = 512;
 const double timeFactor = 1;
 
 #else
@@ -49,7 +49,7 @@ const double timeFactor = 10;
 const double MAXIMUM_JERK = 1;
 const double MAXIMUM_ACCELERATION = 2;
 const double TARGET_VELOCITY = 5;
-const double TARGET_DISTANCE = 2;
+const double TARGET_DISTANCE = 4;
 const double PRECISION = 128;
 const double timeFactor = 1;
 
@@ -64,9 +64,9 @@ int main()
 	SCurvedMotionProfile profile = SCurvedMotionProfile(MAXIMUM_JERK, MAXIMUM_ACCELERATION, TARGET_VELOCITY, TARGET_DISTANCE, PRECISION);
 
 	points = profile.Populate();
-
+#ifdef _USE_DEBUG_OUTPUT_
 	std::cout << "Acceleration,Velocity,Position" << endl;
-
+#endif // _USE_DEBUG_OUTPUT_
 	double timeIncrement = points[points.size() - 1].Time / PRECISION;
 
 	for (int i = 0; i < points.size(); ++i)

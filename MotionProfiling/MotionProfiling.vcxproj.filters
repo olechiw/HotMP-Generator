@@ -24,6 +24,9 @@
     <ClCompile Include="SCurvedMotionProfile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TrapezoidMotionProfile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -36,6 +39,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SCurvedMotionProfile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TrapezoidMotionProfile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
